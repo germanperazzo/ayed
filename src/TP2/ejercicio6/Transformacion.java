@@ -3,14 +3,14 @@ package TP2.ejercicio6;
 import TP2.ejercicio1.BinaryTree;
 
 public class Transformacion {
-	private BinaryTree<Integer> ab;
+	private BinaryTree<Integer> a;
 	
 	public Transformacion(BinaryTree<Integer> unArbol) {
-        ab = unArbol;
+        a = unArbol;
     }
 	
 	public BinaryTree<Integer> suma() {
-		if ((ab != null) && (!ab.isEmpty())) {
+		if ((a != null) && (!a.isEmpty())) {
 	        suma(ab);
 	    }
 		
