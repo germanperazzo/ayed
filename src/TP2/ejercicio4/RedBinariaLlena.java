@@ -15,17 +15,17 @@ public class RedBinariaLlena {
     	return ((a != null ) && (!a.isEmpty())) ? retardoReenvio(a) : 0; 
     }
     
-    private int retardoReenvio(BinaryTree<Integer> ab) {
+    private int retardoReenvio(BinaryTree<Integer> a) {
     	
-    	if (ab.isLeaf()) return ab.getData(); 
+    	if (a.isLeaf()) return a.getData(); 
     	
-    	int izq = ab.hasLeftChild() ? retardoReenvio(ab.getLeftChild()) : 0; 
-    	int der = ab.hasRightChild() ? retardoReenvio(ab.getRightChild()) : 0; 
+    	int izq = a.hasLeftChild() ? retardoReenvio(a.getLeftChild()) : 0; 
+    	int der = a.hasRightChild() ? retardoReenvio(a.getRightChild()) : 0; 
     	
     	if (izq <= der) 
-    		return ab.getData() + der; 
+    		return a.getData() + der; 
     	else 
-    		return ab.getData() + izq;
+    		return a.getData() + izq;
     }
     
 }

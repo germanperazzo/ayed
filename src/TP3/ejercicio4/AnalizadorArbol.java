@@ -19,15 +19,25 @@ public class AnalizadorArbol {
 	        
 	        q.enqueue(arbol);
 			q.enqueue(null);
+			
 			while(!q.isEmpty()) {
 				aux = q.dequeue();
+				
 				if(aux != null) {
 					sum += aux.getData().getTardanza();
+					
+					for (GeneralTree<AreaEmpresa> child : aux.getChildren()) {
+	                    q.enqueue(child);
+	                }
+					
 				}else {
 					prom= (double) sum/cant;
+					
 					if(prom > promMax) promMax= prom;
+					
 					sum = 0;
 					cant = q.size();
+					
 					if(!q.isEmpty()) q.enqueue(null);
 				}
 				

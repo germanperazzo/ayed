@@ -3,36 +3,36 @@ package TP2.ejercicio6;
 import TP2.ejercicio1.BinaryTree;
 
 public class Transformacion {
-	private BinaryTree<Integer> a;
+	private BinaryTree<Integer> ab;
 	
 	public Transformacion(BinaryTree<Integer> unArbol) {
-        a = unArbol;
+        ab = unArbol;
     }
 	
 	public BinaryTree<Integer> suma() {
-		if ((a != null) && (!a.isEmpty())) {
+		if ((ab != null) && (!ab.isEmpty())) {
 	        suma(ab);
 	    }
 		
 		return ab;
 	}
 	
-	private int suma(BinaryTree<Integer>ab){
+	private int suma(BinaryTree<Integer>a){
 		
 		int suma = 0;
 		
-		if(ab.isLeaf()) {
-			suma = ab.getData();
-			ab.setData(0);
+		if(a.isLeaf()) {
+			suma = a.getData();
+			a.setData(0);
 		} else {
-			if(ab.hasLeftChild()) {
-	            suma+= suma(ab.getLeftChild());
+			if(a.hasLeftChild()) {
+	            suma+= suma(a.getLeftChild());
 	        }
-	        if(ab.hasRightChild()) {
-	            suma+= suma(ab.getRightChild());
+	        if(a.hasRightChild()) {
+	            suma+= suma(a.getRightChild());
 	        }
-	        int actual = ab.getData();
-	        ab.setData(suma);
+	        int actual = a.getData();
+	        a.setData(suma);
 	        suma+=actual;
 		}
 		
