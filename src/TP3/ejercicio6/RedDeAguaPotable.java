@@ -11,15 +11,17 @@ public class RedDeAguaPotable {
 	}
 	
 	private double minimoCaudal (GeneralTree<Character> ag, double caudal, double caudalM) {
+		
 		caudal = caudal / ag.getChildren().size();
 		
 		if(ag.isLeaf()) {
+			
 			if(caudal < caudalM) caudalM =caudal;
+			
 		}else {
 			for (GeneralTree<Character> child : ag.getChildren()) {
 				caudalM = minimoCaudal(child,caudal,caudalM);
 			}
-			
 		}
 		
 		return caudalM;
